@@ -1,0 +1,5 @@
+Rule 1: If waste_level > 85 and waste_type = Organic and weather_condition = Rainy → 🚨 Urgent collection required (organic waste may decay faster in rain)
+Rule 2: If waste_level > 85 → ⚠️ Collect immediately – bin almost full
+Rule 3: If 60 < waste_level ≤ 85 and location_priority = High → 🟠 Schedule collection soon – high priority zone
+Rule 4: If 40 < waste_level ≤ 60 and waste_type = Recyclable → 🟢 Optimize route – include in next recyclable trip
+Rule 5: If waste_level < 40 → ✅ No immediate action – monitor periodically

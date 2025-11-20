@@ -1,0 +1,36 @@
+[
+  {
+    "condition": {
+      "waste_level": ">85",
+      "waste_type": "Organic",
+      "weather_condition": "Rainy"
+    },
+    "action": "🚨 Urgent collection required (organic waste may decay faster in rain)"
+  },
+  {
+    "condition": {
+      "waste_level": ">85"
+    },
+    "action": "⚠️ Collect immediately – bin almost full"
+  },
+  {
+    "condition": {
+      "waste_level": "60-85",
+      "location_priority": "High"
+    },
+    "action": "🟠 Schedule collection soon – high priority zone"
+  },
+  {
+    "condition": {
+      "waste_level": "40-60",
+      "waste_type": "Recyclable"
+    },
+    "action": "🟢 Optimize route – include in next recyclable trip"
+  },
+  {
+    "condition": {
+      "waste_level": "<40"
+    },
+    "action": "✅ No immediate action – monitor periodically"
+  }
+]
