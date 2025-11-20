@@ -83,56 +83,7 @@ Rule 3: If 60 < waste_level ≤ 85 and location_priority = High → Schedule col
 Rule 4: If 40 < waste_level ≤ 60 and waste_type = Recyclable → Optimize route for next recyclable trip.
 Rule 5: If waste_level < 40 → No immediate action (monitor periodically).
 
-🏗️ System Architecture
-         ┌────────────────────┐
-         │   JSON Knowledge   │
-         │       Base         │
-         └─────────┬──────────┘
-                   │
-                   ▼
-       ┌───────────────────────────┐
-       │  Intelligent Waste Agent  │
-       ├───────────────────────────┤
-       │ • Perceive (Sensors)      │
-       │ • Reason (Rules)          │
-       │ • Act (Decision)          │
-       │ • Learn (Database Logs)   │
-       └─────────┬─────────────────┘
-                 │
-                 ▼
-     ┌─────────────────────┐
-     │ Streamlit Interface │
-     └─────────────────────┘
-                 │
-                 ▼
-     ┌─────────────────────┐
-     │   MySQL / SQLite    │
-     │   Waste Logs Table  │
-     └─────────────────────┘
 
-🔄 Agent Decision-Making Flowchart
-                 ┌────────────────────────┐
-                 │ Sense Environment Data │
-                 └───────────┬────────────┘
-                             ▼
-                ┌─────────────────────────┐
-                │ Compare Data With Rules │
-                └───────────┬─────────────┘
-                            ▼
-           ┌──────────────────────────────────┐
-           │ Does Any Rule Match Conditions?  │
-           └───────┬──────────────────────────┘
-                   │ Yes
-                   ▼
-         ┌──────────────────────────┐
-         │   Return Matched Action  │
-         └──────────────────────────┘
-
-                   │ No
-                   ▼
-         ┌──────────────────────────┐
-         │ Default Routine Schedule │
-         └──────────────────────────┘
 
 🗄️ Database Schema (MySQL or SQLite)
 TABLE waste_log (
@@ -145,9 +96,7 @@ TABLE waste_log (
     timestamp DATETIME
 )
 
-📸 Screenshots (Add yours here)
-![UI Screenshot](link_here)
-![Database Logs](link_here)
+
 
 🛠️ Tech Stack
 Frontend
