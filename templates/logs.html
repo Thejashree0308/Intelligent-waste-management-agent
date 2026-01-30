@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logged Data</title>
+</head>
+<body>
+
+<h2>📊 Logged Data</h2>
+
+{% if rows %}
+<table border="1">
+    <tr>
+        <th>Waste Level</th>
+        <th>Waste Type</th>
+        <th>Location Priority</th>
+        <th>Weather</th>
+        <th>Decision</th>
+        <th>Timestamp</th>
+    </tr>
+    {% for r in rows %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] }}</td>
+        <td>{{ r[3] }}</td>
+        <td>{{ r[4] }}</td>
+        <td>{{ r[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No data logged yet.</p>
+{% endif %}
+
+<br>
+<a href="/">⬅ Back</a>
+
+</body>
+</html>
