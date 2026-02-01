@@ -1,39 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Logged Data</title>
+    <title>Waste Logs</title>
+    <style>
+        body {
+            background: #020617;
+            color: #e5e7eb;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #f472b6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #1e293b;
+            color: #93c5fd;
+        }
+
+        tr:nth-child(even) {
+            background: #020617;
+        }
+
+        tr:hover {
+            background: #1e1b4b;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-<h2>📊 Logged Data</h2>
+    <h1>📊 Waste Collection Logs</h1>
 
-{% if rows %}
-<table border="1">
-    <tr>
-        <th>Waste Level</th>
-        <th>Waste Type</th>
-        <th>Location Priority</th>
-        <th>Weather</th>
-        <th>Decision</th>
-        <th>Timestamp</th>
-    </tr>
-    {% for r in rows %}
-    <tr>
-        <td>{{ r[0] }}</td>
-        <td>{{ r[1] }}</td>
-        <td>{{ r[2] }}</td>
-        <td>{{ r[3] }}</td>
-        <td>{{ r[4] }}</td>
-        <td>{{ r[5] }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-<p>No data logged yet.</p>
-{% endif %}
+    <table>
+        <tr>
+            <th>Waste %</th>
+            <th>Type</th>
+            <th>Priority</th>
+            <th>Weather</th>
+            <th>Decision</th>
+            <th>Time</th>
+        </tr>
 
-<br>
-<a href="/">⬅ Back</a>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">⬅ Back to Dashboard</a>
 
 </body>
 </html>
